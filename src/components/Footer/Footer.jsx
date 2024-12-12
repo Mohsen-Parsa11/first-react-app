@@ -1,7 +1,9 @@
+import styled from './footer.module.css'
+
 // footer component
 function Footer () {
     return (
-      <div>
+      <div className={styled.footer}>
         <h1>
           Footer
         </h1>

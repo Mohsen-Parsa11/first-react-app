@@ -1,0 +1,23 @@
+.header{
+   box-shadow: 0x 3px 5px #0f0f0f;
+   -webkit-box-pack: end;
+   /* background: rgb(228, 219, 219); */
+   border-bottom: 1px solid #ddd;
+   height: 60px;
+   display: flex;
+   justify-content: start;
+   align-items: center;
+   position: sticky;
+   top: 0;
+}
+
+.header ul{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding-left: 40px;
+}
+
+.header ul li{
+    margin-right: 20px;
+}
