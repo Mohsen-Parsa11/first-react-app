@@ -5,17 +5,20 @@
    border-bottom: 1px solid #ddd;
    height: 60px;
    display: flex;
-   justify-content: start;
+   justify-content: end;
    align-items: center;
    position: sticky;
    top: 0;
+   padding-right: 30px;
+   flex-direction: row-reverse;
 }
 
 .header ul{
     display: flex;
-    justify-content: start;
+    justify-content: end;
     flex-direction: row;
     padding-left: 40px;
+    flex-direction: row-reverse;
 }
 
 .header ul li{

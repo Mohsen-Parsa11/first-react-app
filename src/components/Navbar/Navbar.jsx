@@ -1,13 +1,14 @@
 import styled from './navbar.module.css'
 
 // navbar component
-function Navbar () {
+function Navbar (props) {
     return (
       <div className={styled.header}>
+        <h3>{props.title}</h3>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>لیست مقالات</li>
+          <li>مقاله جدید</li>
+          <li>درباره</li>
         </ul>
       </div>
     );
