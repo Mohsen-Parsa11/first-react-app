@@ -2,7 +2,10 @@ import styled from './navbar.module.css'
 
 // navbar component
 function Navbar (props) {
-    return (
+  return (
+      
+    <div className={styled.headerWrapper}>
+      <div className="container">
       <div className={styled.header}>
         <h3>{props.title}</h3>
         <ul>
@@ -11,6 +14,8 @@ function Navbar (props) {
           <li>درباره</li>
         </ul>
       </div>
+      </div>
+    </div>
     );
   }
 

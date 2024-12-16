@@ -1,0 +1,15 @@
+.homeWrapper{
+    
+}
+
+.homeWrapper h4{
+    margin-top: 40px;
+    text-align: end;
+    margin-bottom: 20px;
+}
+
+.articles{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

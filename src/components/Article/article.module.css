@@ -1,0 +1,23 @@
+.articleWrapper{
+    height: 320px;
+    width: 23%;
+    box-shadow: 0px 3px 5px #ddd;
+    margin-bottom: 30px;
+}
+
+.articleWrapper img{
+    height: 245px;
+    width: 100%;
+    object-fit: cover;
+    background-position-x: center;
+}
+
+.articleWrapper  h5{
+    text-align: right;
+    padding: 5px 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.articleWrapper p{
+    text-align: right;
+    padding: 5px 16px;
+}
