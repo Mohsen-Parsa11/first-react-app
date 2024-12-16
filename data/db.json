@@ -1,0 +1,24 @@
+
+
+{
+    "Articles":{
+        "status":true,
+        "message":"success",
+        "data":[
+            {
+                "id":1,
+                "imageUrl":"",
+                "title":"تست عنوان 1",
+                "readingTime":5
+
+            },
+            {
+                "id":2,
+                "imageUrl":"",
+                "title":"تست عنوان۲",
+                "readingTime":4
+
+            }
+        ]
+    }
+}
