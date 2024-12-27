@@ -1,23 +1,37 @@
 
 
 {
-    "Articles":{
+    "articles":{
         "status":true,
         "message":"success",
         "data":[
             {
                 "id":1,
                 "imageUrl":"",
-                "title":"تست عنوان 1",
+                "title":"عنوان اول",
                 "readingTime":5
-
+    
             },
             {
                 "id":2,
                 "imageUrl":"",
-                "title":"تست عنوان۲",
+                "title":"عنوان دوم",
                 "readingTime":4
-
+    
+            },
+            {
+                "id":3,
+                "imageUrl":"",
+                "title":"عنوان سوم",
+                "readingTime":7
+    
+            },
+            {
+                "id":4,
+                "imageUrl":"",
+                "title":"عنوان چهارم",
+                "readingTime":9
+    
             }
         ]
     }

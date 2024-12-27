@@ -1,39 +1,25 @@
+import {useEffect, useState } from 'react';
 import Article from "../../components/Article/Article";
 import Navbar from "../../components/Navbar/Navbar";
 import styled from './home.module.css';
+import axios from "axios";
 function Home () {
 
 
-    let articles= [
-        {
-            "id":1,
-            "imageUrl":"",
-            "title":"عنوان اول",
-            "readingTime":5
+    const [articles, setArticles] = useState([]);
 
-        },
-        {
-            "id":2,
-            "imageUrl":"",
-            "title":"عنوان دوم",
-            "readingTime":4
+    useEffect(() => {
+        // API call
 
-        },
-        {
-            "id":3,
-            "imageUrl":"",
-            "title":"عنوان سوم",
-            "readingTime":7
+        axios.get('http://localhost:8000/articles').then((result) => {
+            setArticles(result)
+        }).catch((error) => {
+            console.log(error)
+        });
+        
+    },[]);
+ 
 
-        },
-        {
-            "id":4,
-            "imageUrl":"",
-            "title":"عنوان چهارم",
-            "readingTime":9
-
-        }
-    ]
 
     return (
 
