@@ -4,9 +4,9 @@ import styled from './footer.module.css'
 function Footer () {
     return (
       <div className={styled.footer}>
-        <h1>
+        <h4>
           Footer
-        </h1>
+        </h4>
       </div>
     );
 }

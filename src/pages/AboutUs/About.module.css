@@ -1,0 +1,26 @@
+.aboutWrapper{
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 50px;
+}
+.aboutWrapper h2{
+    text-align: end;
+    margin-bottom: 30px;
+}
+.aboutWrapper p{
+    text-align: end;
+    margin-bottom: 30px;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+}
+.aboutWrapper h3{
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4ec400;
+}
+.aboutWrapper img{
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+
+}

@@ -2,7 +2,7 @@
     
 }
 
-.homeWrapper h4{
+.homeWrapper .head4{
     margin-top: 40px;
     text-align: end;
     margin-bottom: 20px;
@@ -12,4 +12,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.articles a{
+    width: 23%;
 }
