@@ -7,6 +7,12 @@ function Footer () {
         <h4>
           Footer
         </h4>
+        <h4>
+          Footer
+        </h4>
+        <h4>
+          Footer
+        </h4>
       </div>
     );
 }

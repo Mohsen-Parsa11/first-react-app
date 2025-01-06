@@ -11,16 +11,19 @@ function Home () {
     // userState(): it store data like variable
 
     const [articles, setArticles] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     // useEffect(): it is used when call API
     
     useEffect(() => {
         // API call
-
+        setIsLoading(true)
         axios.get('http://localhost:8000/articles').then((result) => {
             setArticles(result.data);
+            setIsLoading(false);
         }).catch((error) => {
             console.log(error);
+            setIsLoading(false);
         });
 
     },[]);
@@ -32,20 +35,25 @@ function Home () {
 
         <div className={styled.homeWrapper}>
             <Navbar title="محسن بلاک" />
+           
+                <div className="container">
+                    <h4 className={styled.head4}>مقاله جدید</h4>
 
-            <div className="container">
-                <h4 className={styled.head4}>مقاله جدید</h4>
-
-                <div className={styled.articles}>
                     {
-                        articles.map((article) => (
-                            <Link to={`article/${article.id}`}>
-                            <Article key={article.id} article={article} />
-                            </Link>
-                        ))
+                isLoading? <p>چند لحضه صبر کنید...</p> :(
+                    <div className={styled.articles}>
+                        {
+                            articles.map((article) => (
+                                <Link to={`article/${article.id}`}>
+                                    <Article key={article.id} article={article} />
+                                </Link>
+                            ))
+                        }
+                        </div>
+                        )
                     }
-                </div>
-            </div>
+                    </div>
+                
             <Footer />
         </div>
     );

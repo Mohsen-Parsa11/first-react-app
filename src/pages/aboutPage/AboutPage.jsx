@@ -11,12 +11,17 @@ function Aboutpage () {
 
     const params= useParams();
     const [article, setArticle] = useState([]);
-    
+    const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
+        //API call
+        setIsLoading(true)
         axios.get(`http://localhost:8000/articles/${params.id}`).then((result) => {
-            setArticle(result.data);
+            setArticle(result.data);    
+            setIsLoading(false);
         }).catch((error) => {
             console.log(error)
+            setIsLoading(false);
         })
     },[])
 
@@ -24,16 +29,21 @@ function Aboutpage () {
         <div>
             <Navbar />
             <div className="container">
-                <div className={styled.aboutWrapper}>
-                    <h3>{article.title}</h3>
-                    <div className={styled.aboutInfo}>
-                        <span>تاریخ: { article.date}</span>
-                        <span>نویسنده: { article.author}</span>
-                        <span>مدت زمان خواندن { article.readingTime} دقیفه</span>
-                    </div>
-                    <img src={image} alt="article" />
-                    <p>در این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند. این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند. این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند. این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند. این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند. این دوران٫ خداوند متعال توسط چهار زن از بهشتیان ٫ حضرت مریم  آسیه  حضرت حوا  و کلثوم  حضرت خدیجه را یاری رساندند. این بانوان نورانی به دستور الله متعال در لحظه تولد حضرت زهرا  حضور یافتند و ایشان را یاری کردند.</p>
-                </div>
+                {
+                    isLoading ? <p>چند لحضه صبر کنید...</p> : (
+                
+                        <div className={styled.aboutWrapper}>
+                            <h3>{article.title}</h3>
+                            <div className={styled.aboutInfo}>
+                                <span>تاریخ: {article.date}</span>
+                                <span>نویسنده: {article.author}</span>
+                                <span>مدت زمان خواندن {article.readingTime} دقیفه</span>
+                            </div>
+                            <img src={image} alt="article" />
+                            <p>{article.content}</p>
+                        </div>
+                    )
+                }
             </div>
             <Footer />
         </div>
