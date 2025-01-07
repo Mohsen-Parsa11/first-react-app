@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer";
 import styled from './home.module.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Loader from '../../components/Loading/Loader';
 function Home () {
 
 
@@ -35,12 +36,11 @@ function Home () {
 
         <div className={styled.homeWrapper}>
             <Navbar title="محسن بلاک" />
-           
                 <div className="container">
                     <h4 className={styled.head4}>مقاله جدید</h4>
 
                     {
-                isLoading? <p>چند لحضه صبر کنید...</p> :(
+                isLoading? <Loader /> :(
                     <div className={styled.articles}>
                         {
                             articles.map((article) => (
@@ -52,8 +52,7 @@ function Home () {
                         </div>
                         )
                     }
-                    </div>
-                
+                    </div>        
             <Footer />
         </div>
     );

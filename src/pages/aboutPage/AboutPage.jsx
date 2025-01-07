@@ -5,6 +5,7 @@ import image from "../../assets/images/people2.jpg"
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../../components/Loading/Loader";
 
 function Aboutpage () {
 
@@ -25,12 +26,13 @@ function Aboutpage () {
         })
     },[])
 
+    console.log(article);
     return (
         <div>
             <Navbar />
             <div className="container">
                 {
-                    isLoading ? <p>چند لحضه صبر کنید...</p> : (
+                    isLoading ? <Loader /> : (
                 
                         <div className={styled.aboutWrapper}>
                             <h3>{article.title}</h3>
@@ -39,7 +41,7 @@ function Aboutpage () {
                                 <span>نویسنده: {article.author}</span>
                                 <span>مدت زمان خواندن {article.readingTime} دقیفه</span>
                             </div>
-                            <img src={image} alt="article" />
+                            <img src={article.imageUrl} alt="article" />
                             <p>{article.content}</p>
                         </div>
                     )

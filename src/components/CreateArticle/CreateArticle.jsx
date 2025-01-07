@@ -2,6 +2,9 @@ import { useState } from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import styled from "./CreateArticle.module.css";
+import Input from "../Input/Input";
+import Textarea from "../Textarea/Textarea";
+import axios from "axios";
 
 function CreateArticle () {
 
@@ -9,7 +12,9 @@ function CreateArticle () {
         title: "",
         date: "",
         readingTime: "",
-        author:""
+        author: "",
+        message: "",
+        imageUrl: ""
     });
 
     const handleChangeArticle = (e) => {
@@ -17,63 +22,63 @@ function CreateArticle () {
             ...prevState,
             [e.target.name]: e.target.value
         }));
+    }
 
-        // switch (e.target.name) {
-        //     case "title":
-        //         setNewArticle((prevState)=>({
-        //             ...prevState,
-        //             title: e.target.value
-        //         }))
-        //         break
-        //     case "date":
-        //         setNewArticle((prevState)=>({
-        //             ...prevState,
-        //             date: e.target.value
-        //         }))
-        //         break
-        //     default:
-        //         console.log("")
-        // }
-    };
+        const changeMessageHandler = (e) => {
+            setNewArticle((prevState) => ({
+                ...prevState,
+                message: e.target.value
+            }));
 
+            // switch (e.target.name) {
+            //     case "title":
+            //         setNewArticle((prevState)=>({
+            //             ...prevState,
+            //             title: e.target.value
+            //         }))
+            //         break
+            //     case "date":
+            //         setNewArticle((prevState)=>({
+            //             ...prevState,
+            //             date: e.target.value
+            //         }))
+            //         break
+            //     default:
+            //        
+            // }
+        };
     
-    console.log(newArticle)
-    
-    return (
-        <>
-            <Navbar />
-            <div className={styled.ArticleWrapper}>
-                <div className="container">
-                    <h4>ساخت مقاله</h4>
+    const handleMakeArticle = ()=> {
+        axios.post('http://localhost:8000/articles', {
+            id: 9,
+            imageUrl: newArticle.imageUrl,
+            title: newArticle.title,
+            readingTime: newArticle.readingTime,
+            date: newArticle.date,
+            author: newArticle.author,
+            content: newArticle.message,
+        })
+    }
+        return (
+            <>
+                <Navbar />
+                <div className={styled.ArticleWrapper}>
+                    <div className="container">
+                        <h4>ساخت مقاله</h4>
+                        <Input name="title" label="عنوان" handleChange={handleChangeArticle} />
+                        <Input name="date" label="تاریخ" handleChange={handleChangeArticle} />
+                        <Input name="readingTime" label="مدت زمان خواندن" handleChange={handleChangeArticle} />
+                        <Input name="uathor" label="نویسنده" handleChange={handleChangeArticle} />
+                        <Input name="imageUrl" label="عکس مقاله" handleChange={handleChangeArticle} />
+                        <Textarea label="متن" handleChange={changeMessageHandler} />
 
-                    <form action="">
-                    <div className={styled.parent}>
-                     <div>
-                    <label htmlFor="title">عنوان</label>
-                    <input type="text" autoComplete="off" onChange={handleChangeArticle} name="title" />
+                        <div className={styled.btnParent}>
+                        <button onClick={handleMakeArticle}>ساختن مقاله</button>
+                       </div>
                     </div>
-
-                    <div>
-                    <label htmlFor="date">تاریخ</label>
-                    <input type="text" autoComplete="off" onChange={handleChangeArticle} name="date" />
-                    </div>
-
-                    <div>
-                    <label htmlFor="readingTime">مدت زمان خواندن</label>
-                    <input type="text" autoComplete="off" onChange={handleChangeArticle} name="readingTime" />
-                    </div>
-
-                    <div>
-                    <label htmlFor="author">نویسنده</label>
-                    <input type="text" autoComplete="off" onChange={handleChangeArticle} name="author" />
-                    </div>
-                    </div>
-                    </form>
                 </div>
-            </div>
-            <Footer />
-        </>
-    )
+                <Footer />
+            </>
+        )
 }
-
 export default CreateArticle;

@@ -5,7 +5,7 @@ function Article (props) {
     // console.log(props.article.title)
     return (
         <div className={styled.articleWrapper}>
-            <img src={article}  />
+            <img src={props.article.imageUrl}  alt="view"/>
             <h5>{ props.article.title}</h5>
         <p>خواندن در {props.article.readingTime} دقیقه</p>
         </div>
