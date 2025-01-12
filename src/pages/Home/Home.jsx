@@ -33,9 +33,9 @@ function Home () {
 
     return (
 
-
-        <div className={styled.homeWrapper}>
+    <>
             <Navbar title="محسن بلاک" />
+        <div className={styled.homeWrapper}>
                 <div className="container">
                     <h4 className={styled.head4}>مقاله جدید</h4>
 
@@ -55,6 +55,7 @@ function Home () {
                     </div>        
             <Footer />
         </div>
+    </>
     );
 }
 

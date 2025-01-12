@@ -1,10 +1,10 @@
 .homeWrapper{
-    
+    direction: rtl;
 }
 
 .homeWrapper .head4{
     margin-top: 40px;
-    text-align: end;
+    text-align: start;
     margin-bottom: 20px;
 }
 
